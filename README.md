@@ -29,7 +29,20 @@ Unlike standard CRUD applications, this API demonstrates real-world engineering 
 2. **Tasks App**: Handles `GET/POST/PUT/DELETE /api/tasks/`
 3. **Services Module**: The smart automation engine (`services/priority_calculator.py`) calculating priorities precisely.
 
-## Setup Steps
+## Deployment (Production) 🚀
+This project is configured for one-click deployment via **Render.com**.
+
+1. Go to [Render Dashboard](https://dashboard.render.com).
+2. Click **New +** > **Blueprint**.
+3. Connect your GitHub repository.
+4. Render will read the `render.yaml` file to automatically provision:
+   - A fully-managed PostgreSQL Database (`smart-task-db`).
+   - The Django API Web Service (`smart-task-api`).
+   - Background migrations and static file collection via `build.sh`.
+
+---
+
+## Local Setup Steps
 
 1. **Virtual Environment & Dependencies**
    ```bash
