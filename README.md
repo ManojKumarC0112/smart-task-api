@@ -29,27 +29,10 @@ Unlike standard CRUD applications, this API demonstrates real-world engineering 
 2. **Tasks App**: Handles `GET/POST/PUT/DELETE /api/tasks/`
 3. **Services Module**: The smart automation engine (`services/priority_calculator.py`) calculating priorities precisely.
 
-## Deployment (100% Free on Render) 🚀
-Since Render's Blueprint feature requires a paid plan, here is the manual step-by-step method to deploy this on the **Free Tier**:
+## Live Demo 🚀
+The API is currently live and deployed in production on Render!
 
-1. **Create the Database:**
-   - Go to [Render Dashboard](https://dashboard.render.com) > **New +** > **PostgreSQL**.
-   - Name it `smart-task-db` and select the **Free** instance type.
-   - Once created, copy the **Internal Database URL**.
-
-2. **Create the Web Service:**
-   - Click **New +** > **Web Service**.
-   - Connect your GitHub repository.
-   - Set **Build Command**: `./build.sh`
-   - Set **Start Command**: `cd core && gunicorn core.wsgi:application`
-   - Select the **Free** instance type.
-
-3. **Set Environment Variables:**
-   - Scroll down to Environment Variables and add:
-     - `DATABASE_URL` = *(Paste the Internal Database URL from step 1)*
-     - `SECRET_KEY` = *(Type any long random string)*
-     - `PYTHON_VERSION` = `3.10.0`
-   - Click **Create/Deploy Web Service**!
+🔗 **Base URL:** [https://smart-task-api-pxpj.onrender.com](https://smart-task-api-pxpj.onrender.com)
 
 ---
 
