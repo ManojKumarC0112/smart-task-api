@@ -29,16 +29,27 @@ Unlike standard CRUD applications, this API demonstrates real-world engineering 
 2. **Tasks App**: Handles `GET/POST/PUT/DELETE /api/tasks/`
 3. **Services Module**: The smart automation engine (`services/priority_calculator.py`) calculating priorities precisely.
 
-## Deployment (Production) 🚀
-This project is configured for one-click deployment via **Render.com**.
+## Deployment (100% Free on Render) 🚀
+Since Render's Blueprint feature requires a paid plan, here is the manual step-by-step method to deploy this on the **Free Tier**:
 
-1. Go to [Render Dashboard](https://dashboard.render.com).
-2. Click **New +** > **Blueprint**.
-3. Connect your GitHub repository.
-4. Render will read the `render.yaml` file to automatically provision:
-   - A fully-managed PostgreSQL Database (`smart-task-db`).
-   - The Django API Web Service (`smart-task-api`).
-   - Background migrations and static file collection via `build.sh`.
+1. **Create the Database:**
+   - Go to [Render Dashboard](https://dashboard.render.com) > **New +** > **PostgreSQL**.
+   - Name it `smart-task-db` and select the **Free** instance type.
+   - Once created, copy the **Internal Database URL**.
+
+2. **Create the Web Service:**
+   - Click **New +** > **Web Service**.
+   - Connect your GitHub repository.
+   - Set **Build Command**: `./build.sh`
+   - Set **Start Command**: `cd core && gunicorn core.wsgi:application`
+   - Select the **Free** instance type.
+
+3. **Set Environment Variables:**
+   - Scroll down to Environment Variables and add:
+     - `DATABASE_URL` = *(Paste the Internal Database URL from step 1)*
+     - `SECRET_KEY` = *(Type any long random string)*
+     - `PYTHON_VERSION` = `3.10.0`
+   - Click **Create/Deploy Web Service**!
 
 ---
 
