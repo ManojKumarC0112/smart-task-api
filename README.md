@@ -32,7 +32,8 @@ Unlike standard CRUD applications, this API demonstrates real-world engineering 
 ## Live Demo 🚀
 The API is currently live and deployed in production on Render!
 
-🔗 **Base URL:** [https://smart-task-api-pxpj.onrender.com](https://smart-task-api-pxpj.onrender.com)
+🔗 **Base URL:** [https://smart-task-api-pxpj.onrender.com](https://smart-task-api-pxpj.onrender.com)  
+📖 **Interactive API Docs (Swagger):** [https://smart-task-api-pxpj.onrender.com/api/schema/docs/](https://smart-task-api-pxpj.onrender.com/api/schema/docs/)
 
 ---
 
